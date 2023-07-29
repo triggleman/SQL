@@ -1,0 +1,36 @@
+--Creating a clothing store datbase
+
+
+CREATE TABLE store (
+  id INTEGER PRIMARY KEY, 
+  type_of TEXT, 
+  quantity INTEGER, 
+  price INTEGER, 
+  zone INTEGER
+);
+
+INSERT INTO store VALUES (1, "red_shirts", 5, 19, 1);
+INSERT INTO store VALUES (2, "blue_shirts", 12, 21, 1);
+INSERT INTO store VALUES (3, "green_shirts", 8, 19, 1);
+INSERT INTO store VALUES (4, "black_shirts", 22, 19, 1);
+INSERT INTO store VALUES (5, "yellow_shirts", 2, 19, 1);
+INSERT INTO store VALUES (6, "black_pants", 8, 45, 2);
+INSERT INTO store VALUES (7, "grey_pants", 15, 45, 2);
+INSERT INTO store VALUES (8, "tan_pants", 15, 45, 2);
+INSERT INTO store VALUES (9, "blue_pants", 18, 45, 2);
+INSERT INTO store VALUES (10, "dark_grey_pants", 7, 45, 2);
+INSERT INTO store VALUES (11, "black_jackets", 13, 70, 3);
+INSERT INTO store VALUES (12, "red_jackets", 10, 70, 3);
+INSERT INTO store VALUES (13, "blue_jackets", 16, 70, 3);
+INSERT INTO store VALUES (14, "tan_jackets", 5, 70, 3);
+INSERT INTO store VALUES (15, "camo_jackets", 4, 70, 3);
+
+--Selecting all items from zone 2 and getting the total price in that zone
+SELECT SUM(price) FROM store WHERE zone = 2;
+
+
+--Selecting all products that have a quantity more than 
+SELECT * FROM store WHERE quantity >= 8 ORDER BY quantity;
+
+--Selecting all the items on zone 1
+SELECT * from store WHERE zone = 1;
