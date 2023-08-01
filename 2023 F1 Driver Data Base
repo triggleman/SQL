@@ -1,0 +1,58 @@
+CREATE TABLE drivers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    country TEXT);
+
+--All the 2023 F1 drivers and where they are from.
+INSERT INTO drivers (fullname, country) VALUES("MAX Verstappen", "Netherlands");
+INSERT INTO drivers (fullname, country) VALUES("Sergio Perez", "Mexico");
+INSERT INTO drivers (fullname, country) VALUES("Lewis Hamilton", "United Kingdom");
+INSERT INTO drivers (fullname, country) VALUES("George Russell", "United Kingdom");
+INSERT INTO drivers (fullname, country) VALUES("Charles Leclerc", "Monaco");
+INSERT INTO drivers (fullname, country) VALUES("Carlos Sainz", "Spain");
+INSERT INTO drivers (fullname, country) VALUES("Fernando Alonso", "Spain");
+INSERT INTO drivers (fullname, country) VALUES("Lance Stroll", "Canada");
+INSERT INTO drivers (fullname, country) VALUES("Esteban Ocon", "France");
+INSERT INTO drivers (fullname, country) VALUES("Pierre Gasly", "France");
+INSERT INTO drivers (fullname, country) VALUES("Yuki Tsunoda", "Japan");
+INSERT INTO drivers (fullname, country) VALUES("Daniel Ricciardo", "Australia");
+INSERT INTO drivers (fullname, country) VALUES("Lando Norris", "United Kingdom");
+INSERT INTO drivers (fullname, country) VALUES("Oscar Piastri", "Australia");
+INSERT INTO drivers (fullname, country) VALUES("Alexander Albon", "Thailand");
+INSERT INTO drivers (fullname, country) VALUES("Logan Sargeant", "United States");
+INSERT INTO drivers (fullname, country) VALUES("Nico Hulkenberg", "Germany");
+INSERT INTO drivers (fullname, country) VALUES("Kevin Magnussen", "Denmark");
+INSERT INTO drivers (fullname, country) VALUES("Zhou Guanyu", "China");
+INSERT INTO drivers (fullname, country) VALUES("Valtteri Bottas", "Finland");
+
+CREATE table team (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person_id INTEGER,
+    team_name TEXT);
+
+--the names of each driver has their own id that also coresponds to the team they drive for.
+INSERT INTO team (person_id, team_name) VALUES (1, "Red Bull");
+INSERT INTO team (person_id, team_name) VALUES (2, "Red Bull");
+INSERT INTO team (person_id, team_name) VALUES (3, "Mercedes");
+INSERT INTO team (person_id, team_name) VALUES (4, "Mercedes");
+INSERT INTO team (person_id, team_name) VALUES (5, "Ferrari");
+INSERT INTO team (person_id, team_name) VALUES (6, "Ferrari");
+INSERT INTO team (person_id, team_name) VALUES (7, "Aston Martin");
+INSERT INTO team (person_id, team_name) VALUES (8, "Aston Martin");
+INSERT INTO team (person_id, team_name) VALUES (9, "Alpine");
+INSERT INTO team (person_id, team_name) VALUES (10, "Alpine");
+INSERT INTO team (person_id, team_name) VALUES (11, "AlphaTauri");
+INSERT INTO team (person_id, team_name) VALUES (12, "AlphaTauri");
+INSERT INTO team (person_id, team_name) VALUES (13, "McLaren");
+INSERT INTO team (person_id, team_name) VALUES (14, "McLaren");
+INSERT INTO team (person_id, team_name) VALUES (15, "Williams");
+INSERT INTO team (person_id, team_name) VALUES (16, "Williams");
+INSERT INTO team (person_id, team_name) VALUES (17, "Haas");
+INSERT INTO team (person_id, team_name) VALUES (18, "Haas");
+INSERT INTO team (person_id, team_name) VALUES (19, "Alfa Romeo");
+INSERT INTO team (person_id, team_name) VALUES (20, "Alfa Romeo");
+
+--making a join query to match up the driver's id to match their team they drive for.
+SELECT drivers.fullname, team.team_name FROM drivers
+    JOIN team
+    ON drivers.id = team.person_id;
