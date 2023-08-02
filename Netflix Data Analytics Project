@@ -113,6 +113,6 @@ SELECT titles.title, titles.release_year
 FROM "netflix_titles_info" titles
 ORDER BY titles.release_year ASC LIMIT 1;
 
-
+#You can also see the data base and queries executed here http://sqlfiddle.com/#!17/7dae0/10019
 
 
