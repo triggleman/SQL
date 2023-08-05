@@ -1,0 +1,7 @@
+SELECT SUM(quantity)*price as Revenue
+
+,product
+
+FROM BIT_DB.JanSales
+
+GROUP BY product
